@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.nav{
+    color: white;
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav a{
+    color: white;
+}
+
+.nav li:hover{
+background-color: black;
+}
+
+.data-list{
+    margin-left: 40%;
+}
+
+.data-list li{
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.fa-chevron-down{
+  transform: rotate(0deg);
+  transition: 300ms;
+}
+
+.isi:hover .fa-chevron-down{
+    transform: rotate(-180deg);
+}
+.logo{
+    margin-left: 30px;
+}
+
+.list{
+    background-color: black;
+    position: absolute;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    margin-left: -50px;
+    display: none;
+}
+
+.list li{
+    display: block;
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+.nav a:hover{
+color: blue;
+}
+
+.data-list a{
+    text-decoration: none;
+}
+
+.isi:hover .list{
+     background-color: black;
+     display: block;
+}
+
+.list li:hover {
+  color: blueviolet;
+}
+
+/*header======== */
+
+.header {
+    display: flex;
+    background-image: url("pexels-photo-7156910.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 40px;
+}
+
+.home-header{
+    
+    width: 40%;
+    margin: auto;
+}
+
+.home-header h1{
+font-size: 4rem;
+font-weight: 800;
+width: 50%;
+color: white;
+
+}
+
+.gambar{
+    width: 40%;
+    height: 100vh;
+}
+
+.gambar img{
+    width: 600px;
+    height: 600px;
+    margin-top: 200px;
+}
+
+.sosmed{
+    position: fixed;
+    margin-top: 450px;
+    margin-left: 30px;
+}
+
+.sosmed li{
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.sosmed .fa-instagram:hover{
+    color: red;
+}
+
+.sosmed .fa-tiktok:hover{
+    color: black;
+}
+
+.sosmed .fa-whatsapp:hover{
+    color: green;
+}
+
+.sosmed .fa-brands{
+font-size: 30px;
+color: blue;
+}
+
+/* header-selesaiii=== /*
+
+
+/* container - carddddddddd= */
+
+.container{
+  
+    width: 70%;
+    margin: auto;
+}
+
+/* content========== */
+
+.content h2{
+color: black;
+margin-bottom: 10px;
+}
+.content p{
+    color: gray;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+.content img{
+    margin-bottom: 30px;
+}
+
+/* footers cssss= */
+
+.bg-footer{
+    height: 20vh;
+    background-color: #222;
+    text-align: center;
+    color: white;
+    padding-top: 200px;
+}
