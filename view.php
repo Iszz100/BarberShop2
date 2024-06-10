@@ -13,12 +13,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Query untuk memperbarui status menjadi "Sudah dilayani" jika waktu booking_time sudah lewat
+// Query to update status to "Sudah dilayani" if booking_time has passed
 $sql = "UPDATE bookings SET status = 'Sudah dilayani' WHERE booking_time <= NOW() AND status != 'Sudah dilayani'";
 
 if ($conn->query($sql) === TRUE) {
     $rows_updated = $conn->affected_rows;
-    echo $rows_updated;
+    if ($rows_updated > 0) {
+        echo $rows_updated;
+    }
 } else {
     echo "Error updating status:" . $conn->error;
 }
@@ -96,8 +98,8 @@ if ($result === false) {
             background-color: #555;
         }
         .proof-img {
-            max-width: 100px; /* atur lebar gambar sesuai kebutuhan */
-            max-height: 100px; /* atur tinggi gambar sesuai kebutuhan */
+            max-width: 100px; /* adjust width as needed */
+            max-height: 100px; /* adjust height as needed */
         }
     </style>
 </head>
@@ -116,6 +118,7 @@ if ($result === false) {
                     <th>Tranksaksi Pembayaran</th>
                     <th>Bukti Tranksaksi</th>
                     <th>Booking Time</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -130,12 +133,13 @@ if ($result === false) {
                                 <td>{$row['service']}</td>
                                 <td>{$row['status']}</td>
                                 <td>{$row['transaction_id']}</td>
-                                <td><img src='uploads/{$row['payment_proof']}' class='proof-img'></td> <!-- Pastikan path sesuai -->
+                                <td><img src='uploads/{$row['payment_proof']}' class='proof-img'></td>
                                 <td>{$row['booking_time']}</td>
+                                <td><a href='edit_booking.php?booking_id={$row['booking_id']}'>Edit</a></td>
                               </tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='6'>No bookings found</td></tr>";
+                    echo "<tr><td colspan='10'>No bookings found</td></tr>";
                 }
 
                 // Close the connection
@@ -143,7 +147,7 @@ if ($result === false) {
                 ?>
             </tbody>
         </table>
-        <a href="layanan.php" class="btn-kembali">Kembali</a>
+        <a href="layanan2.php" class="btn-kembali">Kembali</a>
     </div>
 </body>
 </html>
